@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NameScript : MonoBehaviour
 {
     public static string playerName;
 
-    public void Awake()
+    public void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        
 
     }
 
-    public static void SaveName()
+    public void Awake()
     {
-        playerName = GameObject.Find("InputField").name.ToString();
+        DontDestroyOnLoad(gameObject);
+        //playerName = "test";
+    }
+
+    public static void SaveName(string name)
+    {
+        playerName = name;
+        
+        // need to get the player name from the textbox
     }
 }
 
